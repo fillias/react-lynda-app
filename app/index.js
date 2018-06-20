@@ -1,1 +1,1 @@
-document.write('hi webpack');
+document.write('hi webpacku');
