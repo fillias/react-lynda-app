@@ -30,7 +30,7 @@ console.log('__dirname: ', __dirname);
 */
 
 module.exports = {
-	entry: path.resolve(__dirname, 'app'),
+	entry: path.resolve(__dirname, 'src'),
 	output: {
 		path: path.resolve(__dirname, 'build'),
 		filename: 'bundle.js'
@@ -39,13 +39,53 @@ module.exports = {
 		port: 3000,
 		contentBase: path.resolve(__dirname, 'build')
 	},
+	
+	watchOptions: {
+	    aggregateTimeout: 300,
+	    poll: 1000, // How often check for changes (in milliseconds)
+	},
+
 	module: {
 		rules: [
 			{
 				test: /\.js$/,
 				exclude: /node-modules/,
 				use: ['babel-loader']
+			},
+			{
+				test: /\.css$/,
+				use: [
+		          {
+		            loader: "style-loader" // creates style nodes from JS strings
+		          },
+		          {
+		            loader: "css-loader" // translates CSS into CommonJS
+		          }
+		        ]
+
+			
+			},
+			{
+				test: /\.scss$/,
+				use: [
+		          {
+		            loader: "style-loader" // creates style nodes from JS strings
+		          },
+		          {
+		            loader: "css-loader" // translates CSS into CommonJS
+		          },
+		          {
+		            loader: "sass-loader" // compiles Sass to CSS
+		          }
+		        ]
 			}
+
 		]
 	}
 };
+
+/* autoprefixer blbne v tyhle verzi webpacku
+		          {
+		            loader: "autoprefixer-loader" 
+		          },
+		          */

@@ -1,1 +1,0 @@
-console.log('hi from src folder');
