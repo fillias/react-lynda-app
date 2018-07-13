@@ -29,15 +29,26 @@ console.log('__dirname: ', __dirname);
 
 */
 
+/***
+historyApiFallback: true,
+a
+publicPath: '/'
+je kvuli routovani v react router, jinak nefungovalo:
+https://stackoverflow.com/questions/43209666/react-router-v4-cannot-get-url/43212553
+https://tylermcginnis.com/react-router-cannot-get-url-refresh/
+*/
+
 module.exports = {
 	entry: path.resolve(__dirname, 'src'),
 	output: {
 		path: path.resolve(__dirname, 'build'),
-		filename: 'bundle.js'
+		filename: 'bundle.js',
+		publicPath: '/'
 	},
 	devServer: {
 		port: 3000,
-		contentBase: path.resolve(__dirname, 'build')
+		contentBase: path.resolve(__dirname, 'build'),
+		historyApiFallback: true,
 	},
 	
 	watchOptions: {

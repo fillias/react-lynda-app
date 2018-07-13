@@ -64,8 +64,8 @@ SkiDayCount.propTypes = {
 	resort: PropTypes.string.isRequired,
 	date: PropTypes.instanceOf(Date).isRequired,
 	total: PropTypes.number,
-	powder: PropTypes.bool,
-	backcountry: PropTypes.bool,
+	powder: PropTypes.number,
+	backcountry: PropTypes.number,
 	goal: PropTypes.number
 }
 
