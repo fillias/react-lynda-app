@@ -26,10 +26,11 @@ render (<Router history={BrowserHistory} >
 	<div>
 		<Switch>
 			<Route exact path ="/"  component={App}/>
-			<Route path ="/list-days"  component={App}>
-
-				<Route path=":filter"  component={App}/>
-			</Route>
+			<Route path ="/list-days"  component={App}/>
+			
+			{/* TODO :filter ve verzi 4 takto nefunguje */}
+			<Route path="/list-days/:filter"  component={App}/> 
+			
 			<Route path ="/add-day"  component={App}/>
 			<Route  component={Whoops404}/>
 		</Switch>
